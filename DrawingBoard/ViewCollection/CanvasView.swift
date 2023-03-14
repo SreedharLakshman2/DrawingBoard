@@ -28,14 +28,14 @@ class CanvasView: UIView {
     func addLabel() {
         let label = UILabel()
         label.text = "Draw Here!"
-        label.textColor = UIColor.systemPurple
+        label.textColor = lineColor
         label.frame = CGRect(x: 5, y: 5, width: 100, height: 30)
         label.tag = 100
         self.addSubview(label)
     }
     
     func addBorderToTheCanvasView() {
-        self.layer.borderColor = UIColor.systemPurple.cgColor
+        self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1.0
     }
     

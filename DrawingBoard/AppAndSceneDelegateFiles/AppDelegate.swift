@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,34 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
         requestDataPermission()
-    }
-    
-    func requestDataPermission() {
-        if #available(iOS 14, *) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                    switch status {
-                    case .authorized:
-                        // Tracking authorization dialog was shown
-                        // and we are authorized
-                        print("Authorized")
-                    case .denied:
-                        // Tracking authorization dialog was
-                        // shown and permission is denied
-                        print("Denied")
-                    case .notDetermined:
-                        // Tracking authorization dialog has not been shown
-                        print("Not Determined")
-                    case .restricted:
-                        print("Restricted")
-                    @unknown default:
-                        print("Unknown")
-                    }
-                })
-            }
-        } else {
-            //you got permission to track, iOS 14 is not yet installed
-        }
     }
 }
     

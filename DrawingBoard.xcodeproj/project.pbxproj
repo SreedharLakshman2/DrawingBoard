@@ -14,7 +14,6 @@
 		1F140E2F29C0C0E2000568DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F140E2E29C0C0E2000568DF /* Assets.xcassets */; };
 		1F140E3229C0C0E2000568DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F140E3029C0C0E2000568DF /* LaunchScreen.storyboard */; };
 		1F140E3A29C0C609000568DF /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F140E3929C0C609000568DF /* CanvasView.swift */; };
-		F4BE9FB429C1AE6100E66D72 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BE9FB429C1AE6100E66D72 /* AppTrackingTransparency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +341,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7DS2M392U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrawingBoard/Info.plist;
@@ -380,7 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7DS2M392U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrawingBoard/Info.plist;

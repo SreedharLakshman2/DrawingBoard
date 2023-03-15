@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func requestDataPermission() {
         if #available(iOS 14, *) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
                     switch status {
                     case .authorized:

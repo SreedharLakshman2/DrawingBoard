@@ -58,7 +58,6 @@ class ViewController: UIViewController {
                 //  Changing view color on main thread.
                 DispatchQueue.main.async {
                     self.canvasView.lineColor = color
-                    self.pencilColorButtonOutlet.tintColor = color
                     self.canvasView.layoutSubviews()
                 }
             }

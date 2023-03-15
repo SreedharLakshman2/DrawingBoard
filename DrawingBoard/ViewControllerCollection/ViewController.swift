@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sliderValueLabel.text = "Line Width = 5"
-        strokeSizeSlider.tintColor = UIColor.black
+        //strokeSizeSlider.tintColor = UIColor.black
         strokeSizeSlider.isUserInteractionEnabled = true
         strokeSizeSlider.isSelected = true
         strokeSizeSlider.layoutIfNeeded()

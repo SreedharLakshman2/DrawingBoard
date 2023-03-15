@@ -14,6 +14,7 @@
 		1F140E2F29C0C0E2000568DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F140E2E29C0C0E2000568DF /* Assets.xcassets */; };
 		1F140E3229C0C0E2000568DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F140E3029C0C0E2000568DF /* LaunchScreen.storyboard */; };
 		1F140E3A29C0C609000568DF /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F140E3929C0C609000568DF /* CanvasView.swift */; };
+		F4BE9FB429C1AE6100E66D72 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1F140E3129C0C0E2000568DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F140E3329C0C0E2000568DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F140E3929C0C609000568DF /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BE9FB429C1AE6100E66D72 /* AppTrackingTransparency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				1F140E2429C0C0DF000568DF /* DrawingBoard */,
 				1F140E2329C0C0DF000568DF /* Products */,
+				F4BE9FB229C1AE5F00E66D72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +112,14 @@
 				1F140E3029C0C0E2000568DF /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F4BE9FB229C1AE5F00E66D72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

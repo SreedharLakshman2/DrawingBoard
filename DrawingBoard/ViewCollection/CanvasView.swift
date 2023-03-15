@@ -22,7 +22,7 @@ class CanvasView: UIView {
          var color = lineColor
         lineColor = color
         addBorderToTheCanvasView()
-        addLabel()
+        //addLabel()
      }
     
     func addLabel() {
@@ -71,7 +71,6 @@ class CanvasView: UIView {
         path.removeAllPoints()
         self.layer.sublayers = nil
         self.setNeedsDisplay()
-        addLabel()
     }
     
     func captureImage() {

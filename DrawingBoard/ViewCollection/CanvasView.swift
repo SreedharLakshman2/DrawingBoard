@@ -25,17 +25,7 @@ class CanvasView: UIView {
          let color = lineColor
         lineColor = color
         addBorderToTheCanvasView()
-        //addLabel()
      }
-    
-    func addLabel() {
-        let label = UILabel()
-        label.text = "Draw Board"
-        label.textColor = lineColor
-        label.frame = CGRect(x: 5, y: 5, width: 100, height: 30)
-        label.tag = 100
-        self.addSubview(label)
-    }
     
     func addBorderToTheCanvasView() {
         self.layer.borderColor = UIColor.black.cgColor
@@ -72,17 +62,25 @@ class CanvasView: UIView {
     
     func clearCanvas() {
         if let path = self.path {
-            path.removeAllPoints()
-            self.layer.sublayers = nil
-            self.setNeedsDisplay()
+            window?.rootViewController?.presentAlertWithTitle(title: "Alert", message: "You want to delete?", options: "Yes","Cancel", completion: { result in
+                if result == "Yes" {
+                    path.removeAllPoints()
+                    self.path = nil
+                    self.layer.sublayers = nil
+                    self.setNeedsDisplay()
+                }
+            })
         }
         else {
             print("Nothing to delete")
+            window?.rootViewController?.presentAlertWithTitle(title: "Alert", message: "Draw something before delete.", options: "OK", completion: { result in
+                print(result)
+            })
         }
     }
     
     func captureImage(share: Bool) {
-        if  !path.isEmpty {
+        if  self.path != nil {
             UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, false, UIScreen.main.scale);
             guard let context = UIGraphicsGetCurrentContext() else {return }
             self.layer.render(in:context)

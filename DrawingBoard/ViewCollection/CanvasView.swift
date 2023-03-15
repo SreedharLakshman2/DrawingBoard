@@ -7,6 +7,9 @@
 
 import UIKit
 
+//Global access variable
+let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
 class CanvasView: UIView {
 
     var lineColor: UIColor!
@@ -19,7 +22,7 @@ class CanvasView: UIView {
      override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-         var color = lineColor
+         let color = lineColor
         lineColor = color
         addBorderToTheCanvasView()
         //addLabel()
@@ -27,7 +30,7 @@ class CanvasView: UIView {
     
     func addLabel() {
         let label = UILabel()
-        label.text = "Draw Here!"
+        label.text = "Draw Board"
         label.textColor = lineColor
         label.frame = CGRect(x: 5, y: 5, width: 100, height: 30)
         label.tag = 100
@@ -68,25 +71,45 @@ class CanvasView: UIView {
     
     
     func clearCanvas() {
-        path.removeAllPoints()
-        self.layer.sublayers = nil
-        self.setNeedsDisplay()
+        if let path = self.path {
+            path.removeAllPoints()
+            self.layer.sublayers = nil
+            self.setNeedsDisplay()
+        }
+        else {
+            print("Nothing to delete")
+        }
     }
     
-    func captureImage() {
-        UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, false, UIScreen.main.scale);
-        guard let context = UIGraphicsGetCurrentContext() else {return }
-        self.layer.render(in:context)
-        if let screenShotImage = UIGraphicsGetImageFromCurrentImageContext() {
-            imageCollection.append(screenShotImage)
-            UIImageWriteToSavedPhotosAlbum(screenShotImage, self, #selector(saveError), nil)
-            UIGraphicsEndImageContext()
+    func captureImage(share: Bool) {
+        if  !path.isEmpty {
+            UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, false, UIScreen.main.scale);
+            guard let context = UIGraphicsGetCurrentContext() else {return }
+            self.layer.render(in:context)
+            if let screenShotImage = UIGraphicsGetImageFromCurrentImageContext() {
+                imageCollection.append(screenShotImage)
+                if share {
+                    let image = screenShotImage
+                    let imageShare = [ image ]
+                    let activityViewController = UIActivityViewController(activityItems: imageShare , applicationActivities: nil)
+                    activityViewController.popoverPresentationController?.sourceView = self
+                    window?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+                }
+                else {
+                    UIImageWriteToSavedPhotosAlbum(screenShotImage, self, #selector(saveError), nil)
+                }
+                UIGraphicsEndImageContext()
+            }
+            print(imageCollection.count)
         }
-        print(imageCollection.count)
+        else {
+            window?.rootViewController?.presentAlertWithTitle(title: "Alert", message: share ? "Please draw something before share to some one." : "Please draw something before save it to photoAlbum.", options: "OK", completion: { result in
+                print(result)
+            })
+        }
     }
     
     @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         if let error = error {
             window?.rootViewController?.presentAlertWithTitle(title: "Alert", message: "\(error.localizedDescription)/Allow access to camera, If it is not given already.", options: "OK", completion: { result in
                 print(result)

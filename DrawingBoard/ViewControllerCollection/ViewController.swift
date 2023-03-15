@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         strokeSizeSlider.isSelected = true
         strokeSizeSlider.layoutIfNeeded()
         canvasView.lineColor = UIColor.black
+        pencilColorButtonOutlet.layer.borderWidth = 1.0
+        pencilColorButtonOutlet.layer.borderColor = UIColor.black.cgColor
     }
 
     @IBAction func clearButtonTapped(_ sender: Any) {
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func captureImageTapped(_ sender: UIButton) {
-        self.canvasView.captureImage()
+        self.canvasView.captureImage(share: false)
     }
     
     @IBAction func slideLineWidthAction(_ sender: UISlider) {
@@ -63,6 +65,11 @@ class ViewController: UIViewController {
         
         self.present(picker, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func shareImageButtonAction(_ sender: UIButton) {
+        //Share Image
+        self.canvasView.captureImage(share: true)
     }
     
     //  Called once you have finished picking the color.

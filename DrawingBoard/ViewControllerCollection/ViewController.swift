@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var strokeSizeSlider: UISlider!
     @IBOutlet weak var sliderValueLabel: UILabel!
     @IBOutlet weak var pencilColorButtonOutlet: UIButton!
+    @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
     
     var cancellable: AnyCancellable?
     
@@ -22,13 +23,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sliderValueLabel.text = "Line Width = 5"
-        //strokeSizeSlider.tintColor = UIColor.black
         strokeSizeSlider.isUserInteractionEnabled = true
         strokeSizeSlider.isSelected = true
         strokeSizeSlider.layoutIfNeeded()
         canvasView.lineColor = UIColor.black
         pencilColorButtonOutlet.layer.borderWidth = 1.0
         pencilColorButtonOutlet.layer.borderColor = UIColor.black.cgColor
+        pencilColorButtonOutlet.layer.cornerRadius = 10
+        pencilColorButtonOutlet.clipsToBounds = true
+        canvasView.backgroundColor = segmentControlOutlet.selectedSegmentIndex == 0 ? UIColor.white : UIColor.black
     }
 
     @IBAction func clearButtonTapped(_ sender: Any) {
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
     @IBAction func pencilButtonTapped(_ sender: Any) {
         
         let picker = UIColorPickerViewController()
-        picker.selectedColor = self.view.backgroundColor!
+        picker.selectedColor = UIColor.black
         
         //  Subscribing selectedColor property changes.
         self.cancellable = picker.publisher(for: \.selectedColor)
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
                 
                 //  Changing view color on main thread.
                 DispatchQueue.main.async {
+                    print(color)
                     self.canvasView.lineColor = color
                     self.canvasView.layoutSubviews()
                 }
@@ -70,6 +74,12 @@ class ViewController: UIViewController {
         //Share Image
         self.canvasView.captureImage(share: true)
     }
+    
+    @IBAction func segmentControlTapAction(_ sender: UISegmentedControl) {
+        canvasView.backgroundColor = segmentControlOutlet.selectedSegmentIndex == 0 ? UIColor.white : UIColor.black
+        self.canvasView.changeBoardColor()
+    }
+    
     
     //  Called once you have finished picking the color.
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {

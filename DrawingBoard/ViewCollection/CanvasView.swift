@@ -79,6 +79,19 @@ class CanvasView: UIView {
         }
     }
     
+    func changeBoardColor() {
+        if let path = self.path {
+            window?.rootViewController?.presentAlertWithTitle(title: "Alert", message: "You want to delete?", options: "Yes","Cancel", completion: { result in
+                if result == "Yes" {
+                    path.removeAllPoints()
+                    self.path = nil
+                    self.layer.sublayers = nil
+                    self.setNeedsDisplay()
+                }
+            })
+        }
+    }
+    
     func captureImage(share: Bool) {
         if  self.path != nil {
             UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, false, UIScreen.main.scale);

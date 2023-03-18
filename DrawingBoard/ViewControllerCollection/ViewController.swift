@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderValueLabel: UILabel!
     @IBOutlet weak var pencilColorButtonOutlet: UIButton!
     @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
+    @IBOutlet weak var viewForButton: UIView!
     
     var cancellable: AnyCancellable?
     
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         pencilColorButtonOutlet.clipsToBounds = true
         canvasView.backgroundColor = segmentControlOutlet.selectedSegmentIndex == 0 ? UIColor.white : UIColor.black
     }
+    
 
     @IBAction func clearButtonTapped(_ sender: Any) {
         self.canvasView.clearCanvas()

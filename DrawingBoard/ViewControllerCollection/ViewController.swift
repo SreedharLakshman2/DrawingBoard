@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewForButton: UIView!
     
     var cancellable: AnyCancellable?
+    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,41 @@ class ViewController: UIViewController {
         pencilColorButtonOutlet.layer.cornerRadius = 10
         pencilColorButtonOutlet.clipsToBounds = true
         canvasView.backgroundColor = segmentControlOutlet.selectedSegmentIndex == 0 ? UIColor.white : UIColor.black
+        // In this case, we instantiate the banner with desired ad size.
+        let adSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
+        bannerView = GADBannerView(adSize: adSize)
+        addBannerViewToView(bannerView)
+        //Test UnitID
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        //OurApp adUnitID
+        //bannerView.adUnitID = "ca-app-pub-9471606055191983~4147205904"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
     
-
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: view.safeAreaLayoutGuide,
+                              attribute: .bottom,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+       
     @IBAction func clearButtonTapped(_ sender: Any) {
         self.canvasView.clearCanvas()
     }
@@ -111,3 +145,13 @@ extension UIViewController {
     
 }
 
+
+extension ViewController: GADBannerViewDelegate {
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      bannerView.alpha = 0
+      UIView.animate(withDuration: 1, animations: {
+        bannerView.alpha = 1
+      })
+    }
+}

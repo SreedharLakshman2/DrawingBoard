@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pencilColorButtonOutlet: UIButton!
     @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
     @IBOutlet weak var viewForButton: UIView!
+    @IBOutlet weak var appVersionLabel: UILabel!
     
     var cancellable: AnyCancellable?
     var bannerView: GADBannerView!
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        appVersionLabel.text = "App Version \(Bundle.main.releaseVersionNumber ?? "0")(\(Bundle.main.buildVersionNumber ?? "0"))"
         sliderValueLabel.text = "Line Width = 5"
         strokeSizeSlider.isUserInteractionEnabled = true
         strokeSizeSlider.isSelected = true
@@ -39,11 +41,9 @@ class ViewController: UIViewController {
         let adSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
         bannerView = GADBannerView(adSize: adSize)
         addBannerViewToView(bannerView)
-        //Test UnitID
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
         //OurApp adUnitID
-        //bannerView.adUnitID = "ca-app-pub-9471606055191983~4147205904"
+        bannerView.adUnitID = "ca-app-pub-9471606055191983~4147205904"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
@@ -155,3 +155,13 @@ extension ViewController: GADBannerViewDelegate {
       })
     }
 }
+
+extension Bundle {
+    var releaseVersionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    var buildVersionNumber: String? {
+        return infoDictionary?["CFBundleVersion"] as? String
+    }
+}
+

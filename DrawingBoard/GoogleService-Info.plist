@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>511205123385-3po9rdhbkn9s17ojqj34mtk44ei7t6gk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.511205123385-3po9rdhbkn9s17ojqj34mtk44ei7t6gk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC4O4G0aleV6p0noFN0LErSVham_3iQkUs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>511205123385</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sreedhar.KolourPencil</string>
+	<key>PROJECT_ID</key>
+	<string>kolourpencil-84730</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kolourpencil-84730.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:511205123385:ios:353c2580aceb7bbccc74e8</string>
+</dict>
+</plist>

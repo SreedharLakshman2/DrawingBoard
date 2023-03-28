@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentControlOutlet: UISegmentedControl!
     @IBOutlet weak var viewForButton: UIView!
     @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var saveButtonOutlet: UIButton!
+    @IBOutlet weak var shareButtonOutlet: UIButton!
+    @IBOutlet weak var deleteButtonOutlet: UIButton!
     
     var cancellable: AnyCancellable?
     var bannerView: GADBannerView!
@@ -41,12 +44,34 @@ class ViewController: UIViewController {
         let adSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
         bannerView = GADBannerView(adSize: adSize)
         addBannerViewToView(bannerView)
-        
         //OurApp adUnitID
-        bannerView.adUnitID = "ca-app-pub-9471606055191983~4147205904"
+        bannerView.adUnitID = "ca-app-pub-9471606055191983/3630865428"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
+        saveButtonOutlet.setTitle("", for: .normal)
+        shareButtonOutlet.setTitle("", for: .normal)
+        deleteButtonOutlet.setTitle("", for: .normal)
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
     }
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
@@ -70,12 +95,14 @@ class ViewController: UIViewController {
           ])
        }
        
-    @IBAction func clearButtonTapped(_ sender: Any) {
+    @IBAction func clearButtonTapped(_ sender: UIButton) {
+        sender.setTitle("", for: .normal)
         self.canvasView.clearCanvas()
     }
     
     
     @IBAction func captureImageTapped(_ sender: UIButton) {
+        sender.setTitle("", for: .normal)
         self.canvasView.captureImage(share: false)
     }
     
@@ -108,6 +135,7 @@ class ViewController: UIViewController {
     
     @IBAction func shareImageButtonAction(_ sender: UIButton) {
         //Share Image
+        sender.setTitle("", for: .normal)
         self.canvasView.captureImage(share: true)
     }
     
@@ -149,6 +177,7 @@ extension UIViewController {
 extension ViewController: GADBannerViewDelegate {
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
       bannerView.alpha = 0
       UIView.animate(withDuration: 1, animations: {
         bannerView.alpha = 1

@@ -425,7 +425,7 @@
 				INFOPLIST_FILE = DrawingBoard/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KolourPencil;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library, So that we can  save images to your photo gallery.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to photo library so that photos can be added.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for tracking purpose";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -464,7 +464,7 @@
 				INFOPLIST_FILE = DrawingBoard/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KolourPencil;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library, So that we can  save images to your photo gallery.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to photo library so that photos can be added.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "App would like to access IDFA for tracking purpose";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

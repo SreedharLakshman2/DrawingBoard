@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         appVersionLabel.text = "App Version \(Bundle.main.releaseVersionNumber ?? "0")(\(Bundle.main.buildVersionNumber ?? "0"))"
-        sliderValueLabel.text = "Line Width = 5"
+        sliderValueLabel.text = "Line Width = \(Int(strokeSizeSlider.value))"
         strokeSizeSlider.isUserInteractionEnabled = true
         strokeSizeSlider.isSelected = true
         strokeSizeSlider.layoutIfNeeded()

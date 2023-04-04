@@ -21,34 +21,34 @@
                                 <rect key="frame" x="10" y="101" width="370" height="699"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1hK-Bd-ga8">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9g-7C-4qE">
-                                                <rect key="frame" x="0.0" y="16" width="0.0" height="18"/>
+                                                <rect key="frame" x="0.0" y="21" width="15" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="oFa-Zp-i9n">
-                                                <rect key="frame" x="3" y="10" width="254" height="31"/>
+                                                <rect key="frame" x="17.999999999999986" y="15" width="251.66666666666663" height="31"/>
                                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                                 <connections>
                                                     <action selector="slideLineWidthAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="fEF-Wy-3Sw"/>
                                                 </connections>
                                             </slider>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJL-y9-nXB">
-                                                <rect key="frame" x="260" y="0.0" width="110" height="50"/>
+                                                <rect key="frame" x="272.66666666666669" y="0.0" width="97.333333333333314" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6M-Rh-ozy">
-                                                        <rect key="frame" x="5" y="5" width="100" height="40"/>
+                                                        <rect key="frame" x="5" y="5" width="87.333333333333329" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="KMH-tZ-7va"/>
+                                                            <constraint firstAttribute="height" constant="50" id="b5Y-aL-r93"/>
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system" title="Pencil Color">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="8"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system" title="Change Color">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
@@ -61,14 +61,13 @@
                                                     <constraint firstItem="c6M-Rh-ozy" firstAttribute="leading" secondItem="rJL-y9-nXB" secondAttribute="leading" constant="5" id="0Zz-IB-HF9"/>
                                                     <constraint firstItem="c6M-Rh-ozy" firstAttribute="top" secondItem="rJL-y9-nXB" secondAttribute="top" constant="5" id="1Mt-Zu-zkr"/>
                                                     <constraint firstAttribute="trailing" secondItem="c6M-Rh-ozy" secondAttribute="trailing" constant="5" id="Mfm-Kf-Dws"/>
-                                                    <constraint firstAttribute="width" constant="110" id="VfT-c1-Zu2"/>
                                                     <constraint firstAttribute="bottom" secondItem="c6M-Rh-ozy" secondAttribute="bottom" constant="5" id="jWx-YA-jH9"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3bu-A2-Mit">
-                                        <rect key="frame" x="0.0" y="60" width="370" height="51"/>
+                                        <rect key="frame" x="0.0" y="70" width="370" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ux8-ae-CSc"/>
                                         </constraints>
@@ -81,7 +80,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgj-TB-14P" customClass="CanvasView" customModule="DrawingBoard" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="370" height="469"/>
+                                        <rect key="frame" x="0.0" y="130" width="370" height="459"/>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b9b-b5-24Q">

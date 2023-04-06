@@ -14,12 +14,27 @@
 		1F140E2F29C0C0E2000568DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F140E2E29C0C0E2000568DF /* Assets.xcassets */; };
 		1F140E3229C0C0E2000568DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F140E3029C0C0E2000568DF /* LaunchScreen.storyboard */; };
 		1F140E3A29C0C609000568DF /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F140E3929C0C609000568DF /* CanvasView.swift */; };
-		1F3DE37A29C233A4008E23C4 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; };
 		1FA6FDDB29CED36C00259786 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FA6FDDA29CED36C00259786 /* GoogleService-Info.plist */; };
 		1FA6FDDE29CED5E800259786 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1FA6FDDD29CED5E800259786 /* FirebaseAnalytics */; };
 		1FA6FDE029CED5E800259786 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1FA6FDDF29CED5E800259786 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E0CA6539100B29DB1A1A2D07 /* Pods_DrawingBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 475DE8116B5FF4B7E2B6DB49 /* Pods_DrawingBoard.framework */; };
+		F46E737F29DE806B00BF39FE /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; };
+		F46E738029DE806B00BF39FE /* AppTrackingTransparency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F46E738129DE806B00BF39FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F46E738029DE806B00BF39FE /* AppTrackingTransparency.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E12147268D3F1EBC9479774 /* Pods-DrawingBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawingBoard.debug.xcconfig"; path = "Target Support Files/Pods-DrawingBoard/Pods-DrawingBoard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -43,8 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F3DE37A29C233A4008E23C4 /* AppTrackingTransparency.framework in Frameworks */,
 				E0CA6539100B29DB1A1A2D07 /* Pods_DrawingBoard.framework in Frameworks */,
+				F46E737F29DE806B00BF39FE /* AppTrackingTransparency.framework in Frameworks */,
 				1FA6FDDE29CED5E800259786 /* FirebaseAnalytics in Frameworks */,
 				1FA6FDE029CED5E800259786 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
@@ -157,6 +172,7 @@
 				1F140E1F29C0C0DF000568DF /* Frameworks */,
 				1F140E2029C0C0DF000568DF /* Resources */,
 				A0D2D3EA12B56948A13A3E14 /* [CP] Embed Pods Frameworks */,
+				F46E738129DE806B00BF39FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,7 +435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7DS2M392U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrawingBoard/Info.plist;
@@ -427,7 +443,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library, So that we can  add images to your photo gallery.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to photo library so that photos can be added.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -458,7 +474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7DS2M392U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrawingBoard/Info.plist;
@@ -466,7 +482,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library, So that we can  add images to your photo gallery.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to photo library so that photos can be added.";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

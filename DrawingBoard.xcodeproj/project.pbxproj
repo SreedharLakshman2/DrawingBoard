@@ -19,22 +19,7 @@
 		1FA6FDE029CED5E800259786 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1FA6FDDF29CED5E800259786 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E0CA6539100B29DB1A1A2D07 /* Pods_DrawingBoard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 475DE8116B5FF4B7E2B6DB49 /* Pods_DrawingBoard.framework */; };
 		F46E737F29DE806B00BF39FE /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; };
-		F46E738029DE806B00BF39FE /* AppTrackingTransparency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4BE9FB329C1AE6100E66D72 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F46E738129DE806B00BF39FE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F46E738029DE806B00BF39FE /* AppTrackingTransparency.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E12147268D3F1EBC9479774 /* Pods-DrawingBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawingBoard.debug.xcconfig"; path = "Target Support Files/Pods-DrawingBoard/Pods-DrawingBoard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +157,6 @@
 				1F140E1F29C0C0DF000568DF /* Frameworks */,
 				1F140E2029C0C0DF000568DF /* Resources */,
 				A0D2D3EA12B56948A13A3E14 /* [CP] Embed Pods Frameworks */,
-				F46E738129DE806B00BF39FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -435,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7DS2M392U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrawingBoard/Info.plist;
@@ -474,7 +458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7DS2M392U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrawingBoard/Info.plist;

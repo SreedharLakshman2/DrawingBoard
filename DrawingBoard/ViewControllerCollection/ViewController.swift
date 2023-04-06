@@ -8,6 +8,26 @@
 import UIKit
 import Combine
 import GoogleMobileAds
+import AppTrackingTransparency
+import AdSupport
+
+struct ATT {
+    private init() {}
+   
+    static func permissionRequest() async -> Bool {
+        switch ATTrackingManager.trackingAuthorizationStatus {
+        case .notDetermined:
+            await ATTrackingManager.requestTrackingAuthorization()
+            return ATTrackingManager.trackingAuthorizationStatus == .authorized
+        case .restricted, .denied:
+            return false
+        case .authorized:
+            return true
+        @unknown default:
+            fatalError()
+        }
+    }
+}
 
 class ViewController: UIViewController {
     
@@ -52,6 +72,13 @@ class ViewController: UIViewController {
         saveButtonOutlet.setTitle("", for: .normal)
         shareButtonOutlet.setTitle("", for: .normal)
         deleteButtonOutlet.setTitle("", for: .normal)
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Task {
+            _ =  await ATT.permissionRequest()
+        }
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
